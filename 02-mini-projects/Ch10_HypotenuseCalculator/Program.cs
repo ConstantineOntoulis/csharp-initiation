@@ -9,11 +9,19 @@
 
 namespace Ch10_HypotenuseCalculator;
 
-public static class Ch10_HypotenuseCalculator
+public static class Program
 {
-    public static void Run()
+    public static void Main()
     {
+        Console.WriteLine("Enter side A: ");
+        double a = Convert.ToDouble(Console.ReadLine());
 
+        Console.WriteLine("Enter side B: ");
+        double b = Convert.ToDouble(Console.ReadLine());
+
+        double c = Math.Sqrt(a * a + b * b);
+
+        Console.WriteLine("The hypotenuse is: " + c);
 
         Console.ReadKey();
     }
