@@ -4,8 +4,20 @@ public static class Ch16_ForLoops
 {
     public static void Run()
     {
-        // Bro Code chapter 16: ForLoops
-        // 1) Copy the tutorial examples here.
-        // 2) Add ONE mutation (your own variation) to prove understanding.
+        // Chapter 16: ForLoops = re[eats some code a FINITE amount of times
+        /*
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+        */
+
+        for (int i = 10; i > 0; i--)
+        {
+            Console.WriteLine(i);
+        }
+        Console.WriteLine("HAPPY NEW YEAAAAR!!");
+
+        Console.ReadKey();
     }
 }
