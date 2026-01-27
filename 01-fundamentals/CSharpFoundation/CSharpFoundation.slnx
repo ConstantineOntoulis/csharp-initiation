@@ -1,4 +1,5 @@
 <Solution>
+  <Project Path="../../02-mini-projects/Calculator Program/Ch20_CalculatorProgram.csproj" Id="d99f1f91-842c-4350-aa84-aef04c8f18c8" />
   <Project Path="../../02-mini-projects/Ch10_HypotenuseCalculator/Ch10_HypotenuseCalculator.csproj" />
   <Project Path="../../02-mini-projects/Ch18_NumberGuessingGame/Ch18_NumberGuessingGame.csproj" Id="1d6797cb-9bd2-4cc3-b944-92831f190d06" />
   <Project Path="../../02-mini-projects/Ch19_RockPaperScissors/Ch19_RockPaperScissors.csproj" Id="3aab83a8-7e2d-46cd-8a72-672ec44f843f" />
