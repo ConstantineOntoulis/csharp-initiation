@@ -4,8 +4,21 @@ public static class Ch22_ForeachLoop
 {
     public static void Run()
     {
-        // Bro Code chapter 22: ForeachLoop
-        // 1) Copy the tutorial examples here.
-        // 2) Add ONE mutation (your own variation) to prove understanding.
+        // Chapter 22: ForeachLoop
+
+        String[] cars = { "BMW", "Mustang", "Corvette" };
+
+        //without for each
+        for (int i = 0; i < cars.Length; i++)
+        {
+            Console.WriteLine(cars[i]);
+        }
+        //with foreach
+        foreach(String car in cars)
+        {
+            Console.WriteLine(car);
+        }
+
+        Console.ReadKey();
     }
 }
