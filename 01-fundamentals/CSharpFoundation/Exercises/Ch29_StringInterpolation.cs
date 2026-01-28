@@ -4,8 +4,22 @@ public static class Ch29_StringInterpolation
 {
     public static void Run()
     {
-        // Bro Code chapter 29: StringInterpolation
-        // 1) Copy the tutorial examples here.
-        // 2) Add ONE mutation (your own variation) to prove understanding.
+        // Chapter 29: StringInterpolation
+        // allows us to insert variables into a string literal
+        // precede a string literal with $.
+        // {} are placeholders
+
+        String firstName = "Constantine";
+        String lastName = "Ontoulis";
+        int age = 25;
+        /*
+        Console.WriteLine("Hello, " + firstName + " " + lastName + ".");
+        Console.WriteLine("You are " + age + " years old.");
+        */
+
+        Console.WriteLine($"Hello {firstName} {lastName}.");
+        Console.WriteLine($"You are {age,10} years old."); //the 10 adds 10 spaces before the "age". If I were to write -10, the spaces would be after the "age"
+
+        Console.ReadKey();
     }
 }
