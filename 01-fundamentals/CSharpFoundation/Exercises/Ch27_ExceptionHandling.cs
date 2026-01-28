@@ -4,7 +4,7 @@ public static class Ch27_ExceptionHandling
 {
     public static void Run()
     {
-        // Chapter 27: ExceptionHandling
+        //Chapter 27: ExceptionHandling
         // errors that occur during execution
 
         // try = try some code that is considered "dangerous"
@@ -13,37 +13,49 @@ public static class Ch27_ExceptionHandling
 
         double x;
         double y;
-        double result;
+        double results;
+
+        /* Console.WriteLine("Enter number 1: ");
+        x = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Enter number 1: ");
+        y = Convert.ToDouble(Console.ReadLine());
+
+        results = x / y; // doesn't handle error exceptions e.g. string input, 0 etc
+        Console.WriteLine("results: " + results); */
+
         try
         {
             Console.WriteLine("Enter number 1: ");
             x = Convert.ToDouble(Console.ReadLine());
 
-            Console.WriteLine("Enter number 2: ");
+            Console.WriteLine("Enter number 1: ");
             y = Convert.ToDouble(Console.ReadLine());
 
-            result = x / y;
+            results = x / y; // doesn't handle error exceptions e.g. string input, 0 etc
+            Console.WriteLine("results: " + results);
+        }
+        catch (FormatException e)
+        {
+            Console.WriteLine("Please enter ONLY valid inputs!");
+        }
+        /* catch (DivideByZeroException e) // this only occurs with int division, so in order for this exception to be valid, the variables 
+         {                                                        // have to be turned into integers
+             Console.WriteLine("You cannot divide by zero!");
+         } */
+        /* catch (Exception e) //catches all exceptions but is not good practice
+        {                                  // User won't know what error occured
+            Console.WriteLine("Something went wrong!"); // It is wiser to handle all exceptions seperately and ONLY then use this method
+        }*/
 
-            Console.WriteLine("Result: " + result);
-        }
-        catch(FormatException e)
+        // finally block is OPTIONAL. Used for closing open files or resetting
+
+        finally //will still excecute EVEN if an exception catches an error
         {
-            Console.WriteLine("Enter ONLY numbers please!");
+            Console.WriteLine("Thank you for visiting!");
         }
-        catch(DivideByZeroException e)
-        {
-            Console.WriteLine("You can't divide by zero!!");
-        }
-        /*
-        catch(Exception e) //this catches everything but it is not good practice because it doesn't let the user know what went wrong
-        {
-            Console.WriteLine("Something went wrong")
-        }
-        */
-        finally
-        {
-            Console.WriteLine("Thanks for visiting!");
-        }
+
         Console.ReadKey();
+
     }
 }
