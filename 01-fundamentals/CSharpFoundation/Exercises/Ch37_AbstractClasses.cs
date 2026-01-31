@@ -12,7 +12,7 @@ public static class Ch37_AbstractClasses
         Car car = new Car();
         Bicycle bicycle = new Bicycle();
         Boat bat = new Boat();
-        Vehicle vehicle = new Vehicle();
+        //Vehicle vehicle = new Vehicle();
 
         Console.ReadKey();
     }
