@@ -6,36 +6,43 @@ public static class Ch40_MethodOverriding
     {
         // Chapter 40: MethodOverriding
         // provides a new version of a method inherited from a parent class
-        // inherited method must be: abstract, virtual, or already overriden
+        // inherited method must be: abstract, virtual,or already overriden
         // used with ToString(), polymorphism
-
-        Dog dog = new Dog();
         Cat cat = new Cat();
+        Dog dog = new Dog();
 
-        dog.Speak();
         cat.Speak();
+        dog.Speak();
+
 
         Console.ReadKey();
     }
-}
-class Animal
-{
-    public virtual void Speak()
+
+    class Animal // Superclass or Base Class
     {
-        Console.WriteLine("The animal goes *brrr*");
+        public virtual void Speak() // Virtual version
+        {
+            Console.WriteLine("The animal goes *brrr*.");
+        }
+
+        /* if we were to use an Abstract method, then we would need the following instead:
+         public abstract void Speak(); // remove the body */
     }
-}
-class Dog : Animal
-{
-    public override void Speak()
+
+    class Cat : Animal
     {
-        Console.WriteLine("The dog goes *woof*");
+        public override void Speak()
+        {  // to create an overriding a method, the method inherited must be virtual, 
+           // abstract or already overriden
+            Console.WriteLine("The cat goes *meow*.");
+        }
     }
-}
-class Cat : Animal
-{
-    public override void Speak()
+
+    class Dog : Animal  // if we were to leave Dog empty, it would still inherit the method from the parent
     {
-        Console.WriteLine("The cat goes *meow*");
+        public override void Speak()
+        {
+            Console.WriteLine("The dog goes *woof*.");
+        }
     }
 }
