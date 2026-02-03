@@ -1,4 +1,7 @@
-﻿namespace CSharpFoundation.Exercises;
+﻿using System;
+using System.Collections.Generic;
+
+namespace CSharpFoundation.Exercises;
 
 public static class Ch44_Lists
 {
@@ -43,5 +46,5 @@ public static class Ch44_Lists
 
         Console.ReadKey();
     }
-}
+
 }
