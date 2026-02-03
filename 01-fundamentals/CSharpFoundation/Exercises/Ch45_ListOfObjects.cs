@@ -1,11 +1,48 @@
-﻿namespace CSharpFoundation.Exercises;
+﻿using System;
+using System.Collections.Generic;
+
+namespace CSharpFoundation.Exercises;
 
 public static class Ch45_ListOfObjects
 {
     public static void Run()
     {
-        // Bro Code chapter 45: ListOfObjects
-        // 1) Copy the tutorial examples here.
-        // 2) Add ONE mutation (your own variation) to prove understanding.
+        // Chapter 45: ListOfObjects
+        // list of objects from a custom class
+
+        List<Player> players = new List<Player>(); // new list <data type, in this case: our class>
+
+        /*Player player1 = new Player("Chad"); //instantiating player objects
+        Player player2 = new Player("Dean");
+        Player player3 = new Player("Larry"); 
+
+        players.Add(player1); // adds objects in the list
+        players.Add(player2);
+        players.Add(player3);*/
+
+        players.Add(new Player("Chad")); //instantiating the objects anonymously
+        players.Add(new Player("Dean"));
+        players.Add(new Player("Larry"));
+
+        foreach (Player player in players)
+        {
+            Console.WriteLine(player.username); //needs to add username, else displays class datatype
+        } // or  we can override the ToString method
+
+        Console.ReadKey();
+    }
+
+    class Player
+    {
+        public string username;
+
+        public Player(String username)
+        {
+            this.username = username;
+        }
+        public override string ToString()
+        {
+            return username;
+        }
     }
 }
