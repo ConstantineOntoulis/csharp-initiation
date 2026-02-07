@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CSharpFoundation.LINQ
+namespace CSharpFoundation.LINQ;
+
+public static class Ch54_ThenByOperator
 {
-    internal class Ch54_ThenByOperator
+    public static void Run()
     {
+
     }
 }

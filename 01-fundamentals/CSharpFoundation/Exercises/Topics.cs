@@ -1,4 +1,6 @@
-﻿namespace CSharpFoundation.Exercises;
+﻿using CSharpFoundation.LINQ;
+
+namespace CSharpFoundation.Exercises;
 
 public static class Topics
 {
