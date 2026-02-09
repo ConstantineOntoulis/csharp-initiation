@@ -27,5 +27,7 @@ public static class Ch53_OrderByOperator
         {
             Console.WriteLine($"{item.Name} - {item.Price}");
         }
+
+        Console.ReadKey();
     }
 }
