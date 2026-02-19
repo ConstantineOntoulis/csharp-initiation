@@ -13,7 +13,7 @@ public static class Program
     {
         var ticketData = TicketDB.GetTicketData();
 
-        var openTickets = ticketData.Where(t => t.Status == "Open").ToList();
+        var openTickets = ticketData.Where(t => t.Status == TicketStatus.Open).ToList();
         var latestFirst = openTickets.OrderByDescending(d => d.Date);
         var ticketSummary = ticketData.Select(s => (Id: s.Id, Title: s.Name, AgeDays: (DateTime.Today - s.Date).Days)).OrderByDescending(x => x.AgeDays).ToList();
 
@@ -70,6 +70,19 @@ public static class Program
         Console.WriteLine(ticketLookup != null
             ? $"Results: Ticket FOUND: #{ticketLookup.Id} - {ticketLookup.Name}"
             : "Results: Ticket NOT FOUND");
+
+        Console.WriteLine();
+
+        var recentTickets = ticketData
+            .Where(t => t.Date >= DateTime.Today.AddDays(-7))
+            .ToList();
+        Console.WriteLine("This week's Tickets(LAST 7 DAYS): ");
+
+        foreach(var t in recentTickets)
+        {
+            Console.WriteLine($"#{t.Id} {t.Date:dd/MMM/yyyy} {t.Status} - {t.Name}");
+        }
+
 
         Console.ReadKey();
     }
