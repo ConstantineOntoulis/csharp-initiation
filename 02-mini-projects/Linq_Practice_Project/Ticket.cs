@@ -6,14 +6,20 @@ using System.Text;
 
 namespace Linq_Practice_Project
 {
+    internal enum TicketStatus
+    {
+        Open,
+        InProgress,
+        Closed
+    }
     internal class Ticket
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Status { get; set; }
+        public TicketStatus Status { get; set; }
         public DateTime Date { get; set; }
 
-        public Ticket(int id, string name, string status, DateTime date)
+        public Ticket(int id, string name, TicketStatus status, DateTime date)
         {
             Id = id;
             Name = name;
