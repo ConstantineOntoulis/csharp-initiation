@@ -41,7 +41,40 @@ public static class Program
         {
             Console.WriteLine($"{s.Id} {s.AgeDays}d - {s.Title}");
         }
+        /*
+        var existing = FindById(ticketData, 1);
+
+        if (existing != null)
+        {
+            Console.WriteLine($"FIND EXISTING: FOUND #{existing.Id} - {existing.Name}");
+        }
+        else
+        {
+            Console.WriteLine("FIND EXISTING: NOT FOUND");
+        }
+
+        var missing = FindById(ticketData, 999);
+
+        if (missing != null)
+        {
+            Console.WriteLine($"FIND MISSING: FOUND #{missing.Id} - {missing.Name}");
+        }
+        else
+        {
+            Console.WriteLine("FIND MISSING: NOT FOUND");
+        }
+        */
+
+        var ticketLookup = FindById(ticketData, 5);
+        Console.WriteLine();
+        Console.WriteLine(ticketLookup != null
+            ? $"Results: Ticket FOUND: #{ticketLookup.Id} - {ticketLookup.Name}"
+            : "Results: Ticket NOT FOUND");
 
         Console.ReadKey();
+    }
+    static Ticket? FindById(List<Ticket> ticketData, int id)
+    {
+        return ticketData.FirstOrDefault(t => t.Id == id);
     }
 }
