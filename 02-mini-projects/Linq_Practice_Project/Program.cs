@@ -83,6 +83,19 @@ public static class Program
             Console.WriteLine($"#{t.Id} {t.Date:dd/MMM/yyyy} {t.Status} - {t.Name}");
         }
 
+        Console.WriteLine();
+
+        var countsByStatus = ticketData
+            .GroupBy(t => t.Status)
+            .Select(g => new {Status = g.Key, Count = g.Count()})
+            .ToList();
+
+        Console.WriteLine("COUNTS BY STATUS: ");
+
+        foreach (var x in countsByStatus)
+        {
+            Console.WriteLine($"{x.Status}: {x.Count}");
+        }
 
         Console.ReadKey();
     }
